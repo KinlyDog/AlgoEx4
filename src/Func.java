@@ -29,7 +29,10 @@ public class Func {
         }
 
         while (s1.size() != 0) {
+            int a = 0;
             char c = s1.pop();
+
+            if (c == '=') break;
 
             if (c > 47 && c < 58) {
                 s2.push(Character.getNumericValue(c));
@@ -44,20 +47,17 @@ public class Func {
                 s2.push(s2.pop() * s2.pop());
             }
 
-            if (c == '-') {
-                int a = s2.pop();
+            if (c == '-' || c == '/') {
+                a = s2.pop();
+            }
 
+            if (c == '-') {
                 s2.push(s2.pop() - a);
             }
 
             if (c == '/') {
-                int a = s2.pop();
-
                 s2.push(s2.pop() / a);
             }
-
-            if (c == '=') break;
-
         }
 
         return s2.pop();
