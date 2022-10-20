@@ -44,7 +44,20 @@ public class Func {
                 s2.push(s2.pop() * s2.pop());
             }
 
+            if (c == '-') {
+                int a = s2.pop();
+
+                s2.push(s2.pop() - a);
+            }
+
+            if (c == '/') {
+                int a = s2.pop();
+
+                s2.push(s2.pop() / a);;
+            }
+
             if (c == '=') break;
+
         }
 
         return s2.pop();
