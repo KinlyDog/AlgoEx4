@@ -53,7 +53,7 @@ public class Func {
             if (c == '/') {
                 int a = s2.pop();
 
-                s2.push(s2.pop() / a);;
+                s2.push(s2.pop() / a);
             }
 
             if (c == '=') break;
