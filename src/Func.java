@@ -41,19 +41,20 @@ public class Func {
             }
 
             int a = s2.pop();
+            int b = s2.pop();
 
             switch (c) {
                 case '+':
-                    s2.push(s2.pop() + a);
+                    s2.push(b + a);
                     break;
                 case '*':
-                    s2.push(s2.pop() * a);
+                    s2.push(b * a);
                     break;
                 case '-':
-                    s2.push(s2.pop() - a);
+                    s2.push(b - a);
                     break;
                 case '/':
-                    s2.push(s2.pop() / a);
+                    s2.push(b / a);
                     break;
                 default:
                     break;
