@@ -20,7 +20,7 @@ public class Stack<T> {
     public T pop() {
         if (size != 0) {
             size--;
-            return list.removeFirst();
+            return list.removeFirst(); // redacting for postFix func
         }
 
         return null;
