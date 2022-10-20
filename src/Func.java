@@ -29,34 +29,34 @@ public class Func {
         }
 
         while (s1.size() != 0) {
-            int a = 0;
             char c = s1.pop();
 
-            if (c == '=') break;
+            if (c == '=') {
+                return s2.pop();
+            }
 
             if (c > 47 && c < 58) {
                 s2.push(Character.getNumericValue(c));
                 continue;
             }
 
-            if (c == '+') {
-                s2.push(s2.pop() + s2.pop());
-            }
+            int a = s2.pop();
 
-            if (c == '*') {
-                s2.push(s2.pop() * s2.pop());
-            }
-
-            if (c == '-' || c == '/') {
-                a = s2.pop();
-            }
-
-            if (c == '-') {
-                s2.push(s2.pop() - a);
-            }
-
-            if (c == '/') {
-                s2.push(s2.pop() / a);
+            switch (c) {
+                case '+':
+                    s2.push(s2.pop() + a);
+                    break;
+                case '*':
+                    s2.push(s2.pop() * a);
+                    break;
+                case '-':
+                    s2.push(s2.pop() - a);
+                    break;
+                case '/':
+                    s2.push(s2.pop() / a);
+                    break;
+                default:
+                    break;
             }
         }
 
