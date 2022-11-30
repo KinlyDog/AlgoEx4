@@ -5,22 +5,22 @@ public class Stack<T> {
     int size;
 
     public Stack() {
-        list = new LinkedList<>();
-        size = 0;
+        this.list = new LinkedList<>();
+        this.size = 0;
     }
 
     public int size() {
-        if (size != 0) {
-            return size;
+        if (this.size != 0) {
+            return this.size;
         }
 
         return 0;
     }
 
     public T pop() {
-        if (size != 0) {
-            size--;
-            return list.removeFirst(); // redacting for postFix func
+        if (this.size != 0) {
+            this.size--;
+            return list.removeFirst();
         }
 
         return null;
@@ -28,14 +28,15 @@ public class Stack<T> {
 
     public void push(T val) {
         list.addFirst(val);
-        size++;
+        this.size++;
     }
 
     public T peek() {
-        if (size != 0) {
+        if (this.size != 0) {
             return list.peek();
         }
 
         return null;
     }
 }
+
